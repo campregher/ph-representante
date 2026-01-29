@@ -1,6 +1,6 @@
 
 import React from 'react';
-
+import { RiVipDiamondLine } from "react-icons/ri";
 const WholesaleSection: React.FC = () => {
   return (
     <section id="wholesale" className="py-24 bg-brand-700 relative overflow-hidden">

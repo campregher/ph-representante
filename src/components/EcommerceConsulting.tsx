@@ -1,8 +1,13 @@
 import React from 'react';
+import { PiStrategy } from "react-icons/pi";
+import { PiBoxArrowDownFill } from "react-icons/pi";
+import { PiMoney } from "react-icons/pi";
+import { MdOutlineContentPasteSearch } from "react-icons/md";
 
 // Logos marketplaces
 import mercadoLivreLogo from '../img/mercado-livre.png';
 import shopeeLogo from '../img/shopee.png';
+
 
 const WHATSAPP_NUMBER = '5511959993968';
 
@@ -16,22 +21,22 @@ const EcommerceConsulting: React.FC = () => {
     {
       title: 'Conteúdo que Converte',
       desc: 'Criação estratégica de títulos, descrições e imagens pensadas para ranquear e vender.',
-      icon: '✍️',
+      icon: <PiStrategy className="w-20 h-20"/>,
     },
     {
       title: 'Anúncios em Massa',
       desc: 'Publicação e padronização de grandes catálogos com foco em escala e consistência.',
-      icon: '📦',
+      icon: <PiBoxArrowDownFill className="w-20 h-20"/>,
     },
     {
       title: 'Gestão Profissional de Ads',
       desc: 'Product Ads orientado a dados, ROAS e giro de estoque.',
-      icon: '📈',
+      icon: <PiMoney className="w-20 h-20 "/>,
     },
     {
       title: 'SEO para Marketplaces',
       desc: 'Palavras-chave, variações e estrutura que dominam os resultados de busca.',
-      icon: '🔎',
+      icon: <MdOutlineContentPasteSearch className="w-20 h-20"/>,
     },
   ];
 
@@ -63,8 +68,8 @@ const EcommerceConsulting: React.FC = () => {
             {/* MARKETPLACES */}
             <div className="space-y-4 mb-10">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-yellow-400/10 rounded-xl flex items-center justify-center">
-                  <img src={mercadoLivreLogo} alt="Mercado Livre" className="h-6 object-contain" />
+                <div className="w-20 h-20 bg-yellow-400/10 rounded-xl flex items-center justify-center">
+                  <img src={mercadoLivreLogo} alt="Mercado Livre" className="h-12 object-contain" />
                 </div>
                 <div>
                   <h4 className="font-bold">Mercado Livre</h4>
@@ -75,8 +80,8 @@ const EcommerceConsulting: React.FC = () => {
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-orange-500/10 rounded-xl flex items-center justify-center">
-                  <img src={shopeeLogo} alt="Shopee" className="h-6 object-contain" />
+                <div className="w-20 h-20 bg-orange-500/10 rounded-xl flex items-center justify-center">
+                  <img src={shopeeLogo} alt="Shopee" className="h-12 object-contain" />
                 </div>
                 <div>
                   <h4 className="font-bold">Shopee</h4>
