@@ -159,7 +159,7 @@ const App: React.FC = () => {
 >
   {/* ÍCONE */}
   <FaWhatsapp className="w-7 h-7" />
-git
+
   {/* TEXTO (SÓ DESKTOP / HOVER) */}
   <span
     className="
