@@ -1,11 +1,14 @@
 
-export interface Brand {
+export type Brand = {
   id: string;
   name: string;
   slogan: string;
   accent: string;
-  logo?: string;
-}
+  logo: string;
+  dropshipping?: boolean;
+  atacado?: boolean;
+};
+
 
 export interface Service {
   title: string;

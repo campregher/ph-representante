@@ -18,10 +18,10 @@ import topMixImgBorrachao from '../img/products/borrachao.png';
 import topMixImgPestana from '../img/products/pestana.png';
 import topMixImgPingadeira from '../img/products/pingadeira.png';
 
-//Produtos Ecoflex
+// Produtos Ecoflex
 import ecoflexImgCalha from '../img/products/calha-de-chuva.png';
 
-//Produtos  Tiger
+// Produtos Tiger
 import tigerImgCalota from '../img/products/calota.png';
 import tigerImgCapaEstepe from '../img/products/capa-estepe.png';
 import tigerImgFrisUniversal from '../img/products/universal.png';
@@ -31,10 +31,9 @@ import megaImgEngate from '../img/products/engate.jpg';
 import megaImgProtetorCarter from '../img/products/protetor-carter.png';
 import megaImgEngateRemovivel from '../img/products/engate-removivel.png';
 
-
 // Produtos Attis
 import attisImgAparaBarro from '../img/products/aparabarro.jpg';
-import attisImgTapeteBandeja  from '../img/products/tapete-bandeja.png';
+import attisImgTapeteBandeja from '../img/products/tapete-bandeja.png';
 
 // Produtos Sofisticar
 import sofisticarImgApoio from '../img/products/apoio.jpg';
@@ -43,7 +42,7 @@ import sofisticarImgLente from '../img/products/lente.jpeg';
 import sofisticarImgCapa from '../img/products/capa.png';
 import sofisticarImgBanco from '../img/products/banco.png';
 
-// Produtos kitec
+// Produtos Kitec
 import kitecImgCarregador from '../img/products/carregador.png';
 import kitecImgAutotransformador from '../img/products/autotransformador.png';
 import kitecImgRegua from '../img/products/regua.png';
@@ -65,57 +64,117 @@ const BrandsSection: React.FC = () => {
   const [selectedBrand, setSelectedBrand] = useState<Brand | null>(null);
 
   const brands: Brand[] = [
-    { id: '1', name: 'Top Mix Automotive', slogan: 'Frisos e Borrachões', accent: 'bg-red-600', logo: topMixLogo },
-    { id: '2', name: 'Ecoflex Automotive', slogan: 'Calha de chuva', accent: 'bg-green-500', logo: ecoflexLogo },
-    { id: '3', name: 'Tiger Acessórios', slogan: 'Calotas, capas e pingadeiras', accent: 'bg-orange-500', logo: tigerLogo },
-    { id: '4', name: 'Mega Automotive', slogan: 'Engates e protetores de cárter', accent: 'bg-indigo-600', logo: megaLogo },
-    { id: '5', name: 'Attis Acessórios', slogan: 'Aparabarros e tapetes', accent: 'bg-yellow-400', logo: attisLogo },
-    { id: '6', name: 'Sofisticar Automotive', slogan: 'Apoios, grades, lentes, etc.', accent: 'bg-yellow-400', logo: sofisticarLogo },
-    { id: '7', name: 'Kitec Equipamentos', slogan: 'Carregadores e Autotransformadores', accent: 'bg-yellow-400', logo: tevicLogo },
-    { id: '8', name: 'Tevic Tapetes', slogan: 'Tapetes, Puxa & Empurra', accent: 'bg-yellow-400', logo: kitecLogo },
+    {
+      id: '1',
+      name: 'Top Mix Automotive',
+      slogan: 'Frisos e Borrachões',
+      accent: 'bg-red-600',
+      logo: topMixLogo,
+      dropshipping: false,
+      atacado: true,
+    },
+    {
+      id: '2',
+      name: 'Ecoflex Automotive',
+      slogan: 'Calha de chuva',
+      accent: 'bg-green-500',
+      logo: ecoflexLogo,
+      dropshipping: true,
+      atacado: true,
+    },
+    {
+      id: '3',
+      name: 'Tiger Acessórios',
+      slogan: 'Calotas, capas e pingadeiras',
+      accent: 'bg-orange-500',
+      logo: tigerLogo,
+      dropshipping: true,
+      atacado: true,
+    },
+    {
+      id: '4',
+      name: 'Mega Automotive',
+      slogan: 'Engates e protetores de cárter',
+      accent: 'bg-indigo-600',
+      logo: megaLogo,
+      dropshipping: true,
+      atacado: true,
+    },
+    {
+      id: '5',
+      name: 'Attis Acessórios',
+      slogan: 'Aparabarros e tapetes',
+      accent: 'bg-yellow-400',
+      logo: attisLogo,
+      dropshipping: true,
+      atacado: true,
+    },
+    {
+      id: '6',
+      name: 'Sofisticar Automotive',
+      slogan: 'Apoios, grades e capas',
+      accent: 'bg-yellow-400',
+      logo: sofisticarLogo,
+      dropshipping: true,
+      atacado: true,
+    },
+    {
+      id: '7',
+      name: 'Kitec Equipamentos',
+      slogan: 'Carregadores e autotransformadores',
+      accent: 'bg-yellow-400',
+      logo: tevicLogo,
+      dropshipping: true,
+      atacado: true,
+    },
+    {
+      id: '8',
+      name: 'Tevic Tapetes',
+      slogan: 'Tapetes e Puxa & Empurra',
+      accent: 'bg-yellow-400',
+      logo: kitecLogo,
+      dropshipping: true,
+      atacado: true,
+    },
   ];
 
   const productsByBrand: Record<string, Product[]> = {
     '1': [
       { id: 'p1', name: 'Friso pintado', sku: 'TMX-001', image: topMixImgFriso },
-      { id: 'p2', name: 'Borrachões de porta', sku: 'TMX-002', image: topMixImgBorrachao },
-      { id: 'p3', name: 'Pestana', sku: 'ECF-101', image: topMixImgPestana },
-      { id: 'p4', name: 'Pingadeira', sku: 'ECF-101', image: topMixImgPingadeira },
+      { id: 'p2', name: 'Borrachão de porta', sku: 'TMX-002', image: topMixImgBorrachao },
+      { id: 'p3', name: 'Pestana', sku: 'TMX-003', image: topMixImgPestana },
+      { id: 'p4', name: 'Pingadeira', sku: 'TMX-004', image: topMixImgPingadeira },
     ],
-    '2': [
-      { id: 'p5', name: 'Calha de chuva', sku: 'ECF-101', image: ecoflexImgCalha },
-    ],
+    '2': [{ id: 'p5', name: 'Calha de chuva', sku: 'ECF-101', image: ecoflexImgCalha }],
     '3': [
-      { id: 'p6', name: 'Calota', sku: 'ECF-101', image: tigerImgCalota },
-      { id: 'p7', name: 'Capa de estepe rígida', sku: 'ECF-101', image: tigerImgCapaEstepe },
-      { id: 'p8', name: 'Friso universal', sku: 'ECF-101', image: tigerImgFrisUniversal },
+      { id: 'p6', name: 'Calota', sku: 'TGR-201', image: tigerImgCalota },
+      { id: 'p7', name: 'Capa de estepe', sku: 'TGR-202', image: tigerImgCapaEstepe },
+      { id: 'p8', name: 'Friso universal', sku: 'TGR-203', image: tigerImgFrisUniversal },
     ],
     '4': [
-      { id: 'p9', name: 'Engate fixo', sku: 'ECF-101', image: megaImgEngate },
-      { id: 'p10', name: 'Engate removível', sku: 'ECF-101', image: megaImgEngateRemovivel },
-      { id: 'p11', name: 'Protetor de cárter', sku: 'ECF-101', image: megaImgProtetorCarter },
+      { id: 'p9', name: 'Engate fixo', sku: 'MEG-301', image: megaImgEngate },
+      { id: 'p10', name: 'Engate removível', sku: 'MEG-302', image: megaImgEngateRemovivel },
+      { id: 'p11', name: 'Protetor de cárter', sku: 'MEG-303', image: megaImgProtetorCarter },
     ],
     '5': [
-      { id: 'p12', name: 'Tapete bandeja', sku: 'ECF-101', image: attisImgTapeteBandeja },
-      { id: 'p13', name: 'Aparabarro de roda', sku: 'ECF-101', image: attisImgAparaBarro},
-      
+      { id: 'p12', name: 'Tapete bandeja', sku: 'ATT-401', image: attisImgTapeteBandeja },
+      { id: 'p13', name: 'Aparabarro', sku: 'ATT-402', image: attisImgAparaBarro },
     ],
     '6': [
-      { id: 'p14', name: 'Apoio de braço', sku: 'ECF-101', image: sofisticarImgApoio },
-      { id: 'p15', name: 'Grade frontal', sku: 'ECF-101', image: sofisticarImgGrade },
-      { id: 'p16', name: 'Lentes para retrovisores', sku: 'ECF-101', image: sofisticarImgLente },
-      { id: 'p17', name: 'Capa de cobrir', sku: 'ECF-101', image: sofisticarImgCapa },
-      { id: 'p18', name: 'Capa de banco', sku: 'ECF-101', image: sofisticarImgBanco }
+      { id: 'p14', name: 'Apoio de braço', sku: 'SOF-501', image: sofisticarImgApoio },
+      { id: 'p15', name: 'Grade frontal', sku: 'SOF-502', image: sofisticarImgGrade },
+      { id: 'p16', name: 'Lente retrovisor', sku: 'SOF-503', image: sofisticarImgLente },
+      { id: 'p17', name: 'Capa automotiva', sku: 'SOF-504', image: sofisticarImgCapa },
+      { id: 'p18', name: 'Capa de banco', sku: 'SOF-505', image: sofisticarImgBanco },
     ],
     '7': [
-      { id: 'p19', name: 'Autotransformadores', sku: 'ECF-101', image: kitecImgAutotransformador },
-      { id: 'p20', name: 'Recarregador de baterias', sku: 'ECF-101', image: kitecImgCarregador },
-      { id: 'p21', name: 'Régua para tomadas', sku: 'ECF-101', image: kitecImgRegua },
+      { id: 'p19', name: 'Autotransformador', sku: 'KIT-601', image: kitecImgAutotransformador },
+      { id: 'p20', name: 'Carregador de bateria', sku: 'KIT-602', image: kitecImgCarregador },
+      { id: 'p21', name: 'Régua de tomadas', sku: 'KIT-603', image: kitecImgRegua },
     ],
     '8': [
-      { id: 'p22', name: 'Tapete Carpete', sku: 'ECF-101', image: tevicImgTapete },
-      { id: 'p23', name: 'Puxa & Empurra', sku: 'ECF-101', image: tevicImgPuxaEmpurra },
-      
+      { id: 'p22', name: 'Tapete carpete', sku: 'TEV-701', image: tevicImgTapete },
+      { id: 'p23', name: 'Puxa & Empurra', sku: 'TEV-702', image: tevicImgPuxaEmpurra },
     ],
   };
 
@@ -125,10 +184,10 @@ const BrandsSection: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-brand-500 font-black uppercase tracking-[0.3em] mb-4">
-              Marcas de Elite
+              Marcas consolidadas no mercado
             </h2>
             <p className="text-3xl md:text-5xl font-black text-white">
-              Qualidade que sua loja merece.
+              Qualidade que seu negócio merece
             </p>
           </div>
 
@@ -138,21 +197,48 @@ const BrandsSection: React.FC = () => {
                 key={brand.id}
                 className="glass-card p-8 rounded-3xl text-center hover:scale-105 transition-transform"
               >
-                <div className="h-16 w-full flex items-center justify-center mb-6">
+                <div className="h-16 flex items-center justify-center mb-6">
                   <img
                     src={brand.logo}
                     alt={brand.name}
                     className="max-h-12 max-w-[160px] object-contain"
                   />
                 </div>
-                <div className="text-xl font-black text-white mb-2">{brand.name}</div>
-                <p className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">{brand.slogan}</p>
+
+                <div className="text-xl font-black text-white mb-2">
+                  {brand.name}
+                </div>
+
+                <div className="flex flex-col items-center gap-1 mb-3">
+                  {brand.dropshipping && (
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                      <span className="text-[10px] uppercase font-bold tracking-widest text-emerald-400">
+                        Faz dropshipping
+                      </span>
+                    </div>
+                  )}
+
+                  {brand.atacado && (
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-sky-500"></span>
+                      <span className="text-[10px] uppercase font-bold tracking-widest text-sky-400">
+                        Venda em atacado
+                      </span>
+                    </div>
+                  )}
+                </div>
+
+                <p className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">
+                  {brand.slogan}
+                </p>
+
                 <div className="mt-6">
                   <button
                     onClick={() => setSelectedBrand(brand)}
                     className="text-xs font-bold text-brand-400 hover:text-white underline"
                   >
-                    Ver Catálogo
+                    Ver produtos
                   </button>
                 </div>
               </div>
