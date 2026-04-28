@@ -1,36 +1,32 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
   <head>
-    <!-- Google tag (gtag.js) --> 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18096631778"></script> 
-    <script> 
-      window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-18096631778'); 
-    </script>
-    <!-- Event snippet for Contato conversion page -->
-    <script>
-      gtag('event', 'conversion', {'send_to': 'AW-18096631778/qtyLCJz6i6IcEOLfkrVD'});
-    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google tag (gtag.js) -->
+    <title>PH Representante | Acessórios Automotivos & Consultoria E-commerce</title>
+
+    <meta
+      name="description"
+      content="Consultoria estratégica para escalar vendas no Mercado Livre e Shopee..."
+    />
+
+    <!-- ✅ Google Tag (APENAS UMA VEZ) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18096631778"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      
       gtag('js', new Date());
-    
       gtag('config', 'AW-18096631778');
     </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PH Representante | Acessórios Automotivos & Consultoria E-commerce</title>
-    <meta
-    name="description"
-    content="Consultoria estratégica para escalar vendas no Mercado Livre e Shopee, com foco em dropshipping, atacado e operação profissional de marketplaces. Representação de marcas automotivas, estruturação de anúncios, gestão de Ads e crescimento previsível para lojistas e revendedores."
-  />
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
+    <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     <script>
       tailwind.config = {
         theme: {
@@ -56,21 +52,25 @@
         }
       }
     </script>
+
     <style>
       body {
         background-color: #050505;
         color: #ffffff;
       }
+
       .glass-card {
         background: rgba(255, 255, 255, 0.02);
         backdrop-filter: blur(12px);
         border: 1px solid rgba(255, 255, 255, 0.05);
       }
+
       .gradient-text {
-        background:#FF3238 ;
+        background: #FF3238;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
+
       .hero-glow {
         position: absolute;
         width: 50vw;
@@ -79,41 +79,45 @@
         filter: blur(60px);
         pointer-events: none;
       }
-      /* Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #1c1d1c #18181b; /* thumb e track */
-}
 
-/* Chrome, Edge e Safari */
-*::-webkit-scrollbar {
-  width: 8px;
-}
-*::-webkit-scrollbar-track {
-  background: #ffffff; /* track */
-  border-radius: 9999px;
-}
-*::-webkit-scrollbar-thumb {
-  background-color: #1c1d1c; /* thumb */
-  border-radius: 9999px;
-  border: 2px solid #18181b; /* espaço entre thumb e track */
-}
+      /* Scroll custom */
+      * {
+        scrollbar-width: thin;
+        scrollbar-color: #1c1d1c #18181b;
+      }
 
+      *::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      *::-webkit-scrollbar-track {
+        background: #ffffff;
+        border-radius: 9999px;
+      }
+
+      *::-webkit-scrollbar-thumb {
+        background-color: #1c1d1c;
+        border-radius: 9999px;
+        border: 2px solid #18181b;
+      }
     </style>
+
+    <!-- React Import -->
     <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@18.2.0",
-    "react-dom": "https://esm.sh/react-dom@18.2.0",
-    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "react/": "https://esm.sh/react@^19.2.4/"
-  }
-}
-</script>
+    {
+      "imports": {
+        "react": "https://esm.sh/react@18.2.0",
+        "react-dom": "https://esm.sh/react-dom@18.2.0",
+        "react-dom/client": "https://esm.sh/react-dom@18.2.0/client"
+      }
+    }
+    </script>
   </head>
+
   <body>
     <div id="root"></div>
+
+    <!-- Seu app React -->
     <script type="module" src="src/index.tsx"></script>
   </body>
 </html>
