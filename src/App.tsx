@@ -25,29 +25,6 @@ const App: React.FC = () => {
 };
 
 export default App;
-              atacadistas e revendedores. Estoque garantido, preço de fábrica e aprovação
-              rápida para pedido em grande volume.
-            </p>
-
-            <div className="flex flex-wrap gap-3 justify-center lg:justify-start mt-6">
-              <span className="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-xs uppercase tracking-[0.22em] text-zinc-300">
-                Pedido B2B em 24h
-              </span>
-              <span className="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-xs uppercase tracking-[0.22em] text-zinc-300">
-                Margem diferenciada
-              </span>
-              <span className="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-xs uppercase tracking-[0.22em] text-zinc-300">
-                Parceria para distribuidor
-              </span>
-            </div>
-
-            {/* CTAs */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-8">
-              <a
-                href="#wholesale"
-                className="px-8 py-4 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition-all shadow-lg shadow-brand-600/20 hover:scale-105"
-              >
-                Sou Distribuidor
               </a>
 
               <a
