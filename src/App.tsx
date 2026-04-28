@@ -1,66 +1,53 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import BrandsSection from './components/BrandsSection';
-import EcommerceSection from './components/EcommerceConsulting';
-import WholesaleSection from './components/WholesaleSection';
-import Footer from './components/Footer';
-import bannerImg from './img/banner.png';
-import ContactForm from './components/ContactForm';
-import { FaWhatsapp, FaComments, FaHeadset } from 'react-icons/fa';
-
-
-// WhatsApp
-const WHATSAPP_NUMBER = '5511959993968';
-
-const whatsappMessage = encodeURIComponent(
-  'Olá! Quero escalar minhas vendas no Mercado Livre e Shopee.\n' +
-  'Gostaria de entender como funciona a consultoria em conteúdo e anúncios.\n'
-
-);
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Representadas from './pages/Representadas';
+import Distribuidores from './pages/Distribuidores';
+import LojistasOnline from './pages/LojistasOnline';
+import Contato from './pages/Contato';
+import WhatsAppButton from './components/WhatsAppButton';
 
 const App: React.FC = () => {
   return (
-    <div className="relative antialiased bg-zinc-950 text-white">
-      <Navbar />
+    <Router>
+      <div className="relative">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/representadas" element={<Representadas />} />
+          <Route path="/distribuidores" element={<Distribuidores />} />
+          <Route path="/lojistas-online" element={<LojistasOnline />} />
+          <Route path="/contato" element={<Contato />} />
+        </Routes>
+        <WhatsAppButton />
+      </div>
+    </Router>
+  );
+};
 
-      {/* HERO */}
-      <section
-        id="home"
-        className="relative min-h-screen flex items-center pt-28 lg:pt-32 overflow-hidden"
-      >
-        {/* Glow */}
-        <div className="hero-glow -top-20 -left-20"></div>
-        <div className="hero-glow -bottom-20 -right-20 opacity-50"></div>
-
-        <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center relative z-10">
-
-          {/* TEXTO */}
-          <div className="space-y-8 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest mx-auto lg:mx-0">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              Representante Autorizado
-            </div>
-
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.1] tracking-tight">
-              Sua Loja em <br />
-              <span className="gradient-text">Alta Performance.</span>
-            </h1>
-
-            <p className="text-zinc-400 text-base sm:text-lg md:text-xl max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              Representação das maiores marcas do setor automotivo e consultoria
-              estratégica para dominar Mercado Livre e Shopee. Escalamos seu
-              faturamento com inteligência e Ads.
+export default App;
+              atacadistas e revendedores. Estoque garantido, preço de fábrica e aprovação
+              rápida para pedido em grande volume.
             </p>
 
+            <div className="flex flex-wrap gap-3 justify-center lg:justify-start mt-6">
+              <span className="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-xs uppercase tracking-[0.22em] text-zinc-300">
+                Pedido B2B em 24h
+              </span>
+              <span className="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-xs uppercase tracking-[0.22em] text-zinc-300">
+                Margem diferenciada
+              </span>
+              <span className="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-xs uppercase tracking-[0.22em] text-zinc-300">
+                Parceria para distribuidor
+              </span>
+            </div>
+
             {/* CTAs */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-8">
               <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`}
-                target="_blank"
-                rel="noreferrer"
+                href="#wholesale"
                 className="px-8 py-4 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition-all shadow-lg shadow-brand-600/20 hover:scale-105"
               >
-                Quero Consultoria
+                Sou Distribuidor
               </a>
 
               <a

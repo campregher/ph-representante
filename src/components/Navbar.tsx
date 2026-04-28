@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import logoImg from '../img/logo.png';
 import { FaInstagram, FaYoutube } from 'react-icons/fa';
 import { SOCIAL_LINKS } from '../config'; // links globais
@@ -14,10 +15,11 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Marcas', href: '#brands' },
-    { name: 'Consultoria', href: '#ecommerce' },
-    { name: 'Atacado', href: '#wholesale' },
+    { name: 'Home', href: '/' },
+    { name: 'Representadas', href: '/representadas' },
+    { name: 'Distribuidores', href: '/distribuidores' },
+    { name: 'Lojistas Online', href: '/lojistas-online' },
+    { name: 'Contato', href: '/contato' },
   ];
 
   // redes sociais agora usando SOCIAL_LINKS
@@ -45,20 +47,20 @@ const Navbar: React.FC = () => {
       >
         <div className="container mx-auto px-6 flex justify-between items-center h-16 md:h-20">
           {/* LOGO */}
-          <a href="#home" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img src={logoImg} alt="PH Representações" className="h-8 md:h-10" />
-          </a>
+          </Link>
 
           {/* MENU DESKTOP */}
           <div className="hidden md:flex items-center gap-10">
             {navLinks.map(link => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                 className="text-sm font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
 
             <a
@@ -104,14 +106,14 @@ const Navbar: React.FC = () => {
         } md:hidden`}
       >
         {navLinks.map(link => (
-          <a
+          <Link
             key={link.name}
-            href={link.href}
+            to={link.href}
             onClick={() => setMenuOpen(false)}
             className="text-white text-2xl font-black uppercase tracking-widest"
           >
             {link.name}
-          </a>
+          </Link>
         ))}
 
         <a
