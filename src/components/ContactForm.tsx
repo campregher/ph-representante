@@ -17,6 +17,14 @@ const ContactForm: React.FC = () => {
     );
   };
 
+  const sendAdsConversion = () => {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'conversion', {
+        send_to: 'AW-18096631778/qtyLCJz6i6IcEOLfkrVD',
+      });
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -36,6 +44,7 @@ const ContactForm: React.FC = () => {
       );
 
       setSuccess(true);
+      sendAdsConversion();
       setName('');
       setEmail('');
       setWhatsapp('');
